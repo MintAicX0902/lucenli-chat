@@ -1,0 +1,23 @@
+spring:
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:59000}
+      password: ${REDIS_PASSWORD:}
+      ttl: 3600
+      timeout: 30000
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:49152}/LucenLiChat?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:}
+pgvector:
+  database: ${PGVECTOR_DATABASE:dp}
+  host: ${PGVECTOR_HOST:localhost}
+  port : ${PGVECTOR_PORT:54328}
+  user: ${PGVECTOR_USER:root}
+  password: ${PGVECTOR_PASSWORD:}
+  table: dp_embedding
+
+rag:
+  docs-path: AiService/src/main/resources/docs
